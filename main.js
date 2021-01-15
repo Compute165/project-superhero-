@@ -61,12 +61,12 @@ function keyDown(e) {
     }
 
     if (key == '84') {
-        newImage('thor_face.png');
+        newImage('ironman_face.png');
         console.log("t");
     }
 
     if (key == '89') {
-        newImage('hulkd_body.png');
+        newImage('spiderman_body.png');
         console.log("y");
     }
 
@@ -76,12 +76,12 @@ function keyDown(e) {
     }
 
     if (key == '73') {
-        newImage('ironman_right_hand.png');
+        newImage('thor_right_hand.png');
         console.log("i");
     }
 
     if (key == '79') {
-        newImage('spiderman_legs.png');
+        newImage('hulk_legs.png');
         console.log("o");
     }
 
@@ -105,4 +105,40 @@ function keyDown(e) {
         console.log("left");
     }
 
+}
+
+function up() {
+    if (playerY >= 0) {
+        playerY = playerY - partH
+        console.log("up x = " + playerX + "y = " + playerY);
+        canvas.remove(playerObj);
+        playerDraw();
+    }
+}
+
+function down() {
+    if (playerY <= 500) {
+        playerY = playerY + partH
+        console.log("down x = " + playerX + "y = " + playerY);
+        canvas.remove(playerObj);
+        playerDraw();
+    }
+}
+
+function left() {
+    if (playerX > 0) {
+        playerX = playerX - partW
+        console.log("left x = " + playerX + "y = " + playerY);
+        canvas.remove(playerObj);
+        playerDraw();
+    }
+}
+
+function right() {
+    if (playerX <= 850) {
+        playerX = playerX + partW
+        console.log("right x = " + playerX + "y = " + playerY);
+        canvas.remove(playerObj);
+        playerDraw();
+    }
 }
